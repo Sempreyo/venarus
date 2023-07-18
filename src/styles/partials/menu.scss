@@ -1,0 +1,141 @@
+.menu {
+	width: 100%;
+	height: calc(100vh - 5rem);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	background-color: var(--color-white);
+	transform: translateX(-100%);
+	transition: var(--duration-default);
+	overflow: hidden;
+
+	@include min(md) {
+		height: calc(100vh - 80/750*100vw);
+		top: vw750(80);
+	}
+
+	@include min(lg) {
+		height: calc(100vh - 100/990*100vw);
+		top: vw990(100);
+		overflow: visible;
+	}
+
+	@include min(xl) {
+		height: calc(100vh - 100/1200*100vw);
+		top: vw1200(100);
+	}
+
+	@include min(xxl) {
+		height: calc(100vh - 100/1440*100vw);
+		top: vw1440(100);
+	}
+
+	&.open {
+		transform: translateX(0);
+	}
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+		top: 16rem;
+		pointer-events: none;
+		overflow: hidden;
+
+		@include min(lg) {
+			top: -15rem;
+		}
+
+		@media (min-width: 1500px) {
+			display: none !important;
+		}
+
+		@media (min-width: 1600px) {
+			top: -13rem;
+		}
+
+		@media (min-width: 1850px) {
+			display: none;
+		}
+
+		svg {
+			width: 32rem;
+			height: 32.9rem;
+
+			@include min(lg) {
+				width: 144rem;
+				height: 91.4rem;
+			}
+		}
+
+		&--mobile {
+			@include min(lg) {
+				display: none;
+			}
+
+			svg {
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+
+		&--desktop {
+			display: none;
+
+			@include min(lg) {
+				display: block;
+			}
+
+			@media (min-width: 1850px) {
+				display: none;
+			}
+		}
+	}
+
+	&__container {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		height: calc(100vh - 10rem);
+		padding-top: 14rem;
+		overflow-y: auto;
+
+		@include min(lg) {
+			justify-content: flex-start;
+			padding-top: 8.5%;
+		}
+
+		@media (min-width: 1850px) {
+			align-items: center;
+			padding-top: 0;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 6rem;
+
+		@include min(lg) {
+			gap: 10rem;
+		}
+
+		@include min(xl) {
+			gap: 9rem;
+		}
+
+		li a {
+			font-family: $secondFont;
+			font-size: 1.6rem;
+			line-height: 1;
+			font-weight: 700;
+			color: var(--color-black);
+			transition: var(--duration-default);
+
+			@include hover {
+				color: var(--color-button-119);
+			}
+		}
+	}
+}

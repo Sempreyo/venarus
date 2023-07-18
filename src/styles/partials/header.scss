@@ -1,0 +1,159 @@
+.header {
+	$parent: &;
+
+	width: 100%;
+	height: 5rem;
+	padding: 1.3rem 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	background-color: var(--color-gray-249);
+	transition: var(--duration-default);
+
+	@include min(md) {
+		height: vw750(80);
+		padding: vw750(12) 0;
+		top: 0;
+		bottom: unset;
+		background-color: var(--color-white);
+	}
+
+	@include min(lg) {
+		height: vw990(100);
+		padding: vw990(26) 0;
+	}
+
+	@include min(xl) {
+		height: vw1200(100);
+		padding: vw1200(26) 0;
+	}
+
+	@include min(xxl) {
+		height: vw1440(100);
+		padding: vw1440(26) 0;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		width: 13.5rem;
+		height: 2.5rem;
+
+		@include min(md) {
+			width: vw750(203);
+			height: vw750(39);
+		}
+
+		@include min(lg) {
+			width: vw990(203);
+			height: vw990(39);
+		}
+
+		@include min(xl) {
+			width: vw1200(203);
+			height: vw1200(39);
+		}
+
+		@include min(xxl) {
+			width: vw1440(203);
+			height: vw1440(39);
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__right {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+
+		@include min(md) {
+			gap: vw750(52);
+		}
+
+		@include min(lg) {
+			gap: vw990(52);
+		}
+
+		@include min(xl) {
+			gap: vw1200(52);
+		}
+
+		@include min(xxl) {
+			gap: vw1440(52);
+		}
+	}
+
+	.burger-1,
+	.burger-3 {
+		transition: transform var(--duration-default);
+	}
+
+	&__burger {
+		cursor: pointer;
+		stroke-dasharray: 100;
+		stroke-dashoffset: 100;
+		animation: dash 7s linear infinite;
+
+		@include hover {
+			animation: none;
+			stroke-dasharray: 0;
+			stroke-dashoffset: 0;
+
+			.burger-1 {
+				transform: translateY(35%);
+			}
+
+			.burger-3 {
+				transform: translateY(-35%);
+			}
+		}
+
+		&.active {
+			animation: none;
+			stroke-dasharray: 0;
+			stroke-dashoffset: 0;
+
+			.burger-1 {
+				transform: translateY(35%);
+			}
+
+			.burger-3 {
+				transform: translateY(-35%);
+			}
+		}
+
+		svg {
+			width: 4.3rem;
+			height: 2.3rem;
+
+			@include min(md) {
+				width: vw750(68);
+				height: vw750(45);
+			}
+
+			@include min(lg) {
+				width: vw990(68);
+				height: vw990(45);
+			}
+
+			@include min(xl) {
+				width: vw1200(68);
+				height: vw1200(45);
+			}
+
+			@include min(xxl) {
+				width: vw1440(68);
+				height: vw1440(45);
+			}
+		}
+	}
+}

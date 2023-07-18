@@ -1,0 +1,74 @@
+.button {
+	$parent: &;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	min-width: 8.2rem;
+	padding: 0.6rem 0.5rem;
+	border: 0.1rem solid transparent;
+	font-size: 1.2rem;
+	line-height: 1;
+	font-weight: 500;
+	border-radius: 3.2rem;
+	transition: var(--duration-default);
+
+	@include min(md) {
+		gap: vw750(5);
+		min-width: vw750(13);
+		padding: vw750(14) vw750(24);
+		border: vw750(1) solid transparent;
+		font-size: vw750(16);
+		border-radius: vw750(32);
+	}
+
+	@include min(lg) {
+		gap: vw990(5);
+		min-width: vw990(13);
+		padding: vw990(14) vw990(24);
+		border: vw990(1) solid transparent;
+		font-size: vw990(16);
+		border-radius: vw990(32);
+	}
+
+	@include min(xl) {
+		gap: vw1200(5);
+		min-width: vw1200(13);
+		padding: vw1200(14) vw1200(24);
+		border: vw1200(1) solid transparent;
+		font-size: vw1200(16);
+		border-radius: vw1200(32);
+	}
+
+	@include min(xxl) {
+		gap: vw1440(5);
+		min-width: vw1440(13);
+		padding: vw1440(14) vw1440(24);
+		border: vw1440(1) solid transparent;
+		font-size: vw1440(16);
+		border-radius: vw1440(32);
+	}
+
+	@include hover {
+		opacity: 0.7;
+	}
+
+	&--primary {
+		background-color: var(--color-button-primary);
+		color: var(--color-white);
+	}
+
+	&--medium {
+		padding: 1rem;
+		border-radius: 4.4rem;
+		font-size: 1.4rem;
+		font-weight: 400;
+
+		@include min(xxl) {
+			padding: vw1440(25);
+			border-radius: vw1440(50);
+			font-size: vw1440(18);
+		}
+	}
+}
